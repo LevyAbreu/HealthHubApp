@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "HealthHubApp",
-    "slug": "HealthHubApp",
+    "name": "HealthHub",
+    "slug": "HealthHub",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

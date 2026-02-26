@@ -26,7 +26,7 @@ export const Header = ({ title, navigation, isHome = false, userPhoto }) => {
         <View style={styles.streakBadge}>
           <Text style={styles.streakText}>
             <Text>🔥</Text>
-            <Text style={{ marginLeft: 5 }}> 2 meses</Text>
+            <Text style={{ marginLeft: 5 }}> 8 semanas</Text>
           </Text>
         </View>
         
@@ -55,9 +55,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
-  avatar: { 
-    width: 45, 
-    height: 45, 
+  avatar: {  
+    width:  42, 
+    height: 42, 
     borderRadius: 22.5,
     borderWidth: 1,
     borderColor: '#DDD'

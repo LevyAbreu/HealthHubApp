@@ -24,7 +24,6 @@ export default function ProfileScreen({ navigation }) {
       </View>
 
       <ScrollView showsVerticalScrollIndicator={false} style={styles.scrollView}>
-        {/* 3. Conteúdo Inferior */}
         <View style={styles.content}>
           <View style={styles.sectionHeader}>
             <Text style={styles.sectionTitle}>Conquistas</Text>

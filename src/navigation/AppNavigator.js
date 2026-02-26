@@ -5,6 +5,8 @@ import { Ionicons } from '@expo/vector-icons';
 import { Theme } from '../styles/theme';
 
 // Telas
+import RegisterScreen from '../screens/auth/RegisterScreen';
+import LoginScreen from '../screens/auth/LoginScreen';
 import HomeScreen from '../screens/patient/HomeScreen';
 import ProfileScreen from '../screens/patient/ProfileScreen';
 import FormScreen from '../screens/patient/FormScreen';
@@ -56,12 +58,13 @@ function TabNavigator() {
 
 export default function AppNavigator() {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
+    <Stack.Navigator initialRouteName="MainTabs" screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name="Register" component={RegisterScreen} />
       <Stack.Screen name="MainTabs" component={TabNavigator} />
       <Stack.Screen name="Hidratation" component={HidratationScreen} />
       <Stack.Screen name="Activity" component={ActivityScreen} />
       <Stack.Screen name="Sleep" component={Sleep} />
-      {/* ADICIONADO AQUI: */}
       <Stack.Screen name="Challenges" component={Challenges} />
     </Stack.Navigator>
   );

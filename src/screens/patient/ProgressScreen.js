@@ -8,7 +8,6 @@ import { PROFILE_DATA } from '../../utils/mockData';
 
 const screenWidth = Dimensions.get("window").width;
 
-// Importação das imagens (Certifique-se que os arquivos estão em assets/)
 const initialImage = require('../../assets/initial.png');
 const nowImage = require('../../assets/now.png');
 
@@ -22,7 +21,7 @@ export default function ProgressScreen({ navigation }) {
       { data: [20, 21, 22, 22.4], color: () => '#22C55E', strokeWidth: 3 },
       { data: [30, 29, 28, 27], color: () => '#F59E0B', strokeWidth: 2 },
     ],
-    legend: ["Peso", "% Gordura", "% Magra", "Id. Óssea"]
+    legend: ["Peso", "% Gordura", "% Magra", "Id. Met"] 
   };
 
   const ComparisonCard = ({ title, date, data, imageSource }) => (
@@ -34,7 +33,7 @@ export default function ProgressScreen({ navigation }) {
           <StatLine label="Peso" value={data.weight} color="#0EA5E9" />
           <StatLine label="Gordura" value={data.fat} color="#EF4444" />
           <StatLine label="M. Magra" value={data.lean} color="#22C55E" />
-          <StatLine label="Id. Óssea" value={data.bone} color="#F59E0B" />
+          <StatLine label="Id. Met" value={data.metabolic} color="#F59E0B" />
         </View>
       </View>
     </View>
@@ -50,18 +49,15 @@ export default function ProgressScreen({ navigation }) {
 
   return (
     <View style={globalStyles.container}>
-      {/* HEADER FIXO: Fora do ScrollView */}
       <View style={styles.fixedHeader}>
           <Header title="Progresso" navigation={navigation} />
       </View>
 
-      {/* CONTEÚDO ROLÁVEL */}
       <ScrollView 
         contentContainerStyle={styles.scrollContent}
         showsVerticalScrollIndicator={false}
       >
         <Text style={globalStyles.sectionTitle}>Evolução Geral</Text>
-        
         
         <View style={[globalStyles.card, styles.chartCard]}>
           <LineChart
@@ -88,14 +84,16 @@ export default function ProgressScreen({ navigation }) {
           title="Início do Tratamento"
           date="10/12/2023"
           imageSource={initialImage}
-          data={{ weight: '70kg', fat: '25%', lean: '20%', bone: '30a' }}
+          // Ajustado a chave do objeto para 'metabolic'
+          data={{ weight: '70kg', fat: '25%', lean: '20%', metabolic: '30a' }}
         />
 
         <ComparisonCard 
           title="Momento Atual"
           date="Hoje"
           imageSource={nowImage}
-          data={{ weight: '65kg', fat: '22.4%', lean: '22.4%', bone: '27a' }}
+          // Ajustado a chave do objeto para 'metabolic'
+          data={{ weight: '65kg', fat: '22.4%', lean: '22.4%', metabolic: '27a' }}
         />
       </ScrollView>
     </View>
